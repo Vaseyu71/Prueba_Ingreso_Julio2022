@@ -5332,6 +5332,10 @@ In this library the device names are the same as the pin names of the symbols, t
 <attribute name="OUT" value="out"/>
 </part>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2">
+<attribute name="5V" value=""/>
+</part>
+<part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5441,6 +5445,14 @@ V-</text>
 <instance part="GND4" gate="1" x="132.08" y="71.12" smashed="yes">
 <attribute name="VALUE" x="129.54" y="68.58" size="1.778" layer="96"/>
 </instance>
+<instance part="JP4" gate="G$1" x="165.1" y="81.28" smashed="yes">
+<attribute name="NAME" x="158.75" y="86.995" size="1.778" layer="95"/>
+<attribute name="VALUE" x="158.75" y="76.2" size="1.778" layer="96"/>
+<attribute name="5V" x="160.02" y="76.2" size="1.778" layer="96" display="name"/>
+</instance>
+<instance part="GND5" gate="1" x="160.02" y="73.66" smashed="yes">
+<attribute name="VALUE" x="157.48" y="71.12" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5538,6 +5550,12 @@ V-</text>
 <pinref part="JP3" gate="A" pin="4"/>
 <wire x1="132.08" y1="73.66" x2="132.08" y2="81.28" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="JP4" gate="G$1" pin="2"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+<wire x1="162.56" y1="81.28" x2="160.02" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="81.28" x2="160.02" y2="76.2" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="VCC" class="0">
 <segment>
@@ -5554,6 +5572,9 @@ V-</text>
 <pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
 <wire x1="149.86" y1="81.28" x2="149.86" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="R12" gate="G$1" pin="2"/>
+<pinref part="JP4" gate="G$1" pin="1"/>
+<wire x1="162.56" y1="83.82" x2="149.86" y2="83.82" width="0.1524" layer="91"/>
+<junction x="149.86" y="83.82"/>
 </segment>
 </net>
 <net name="N$1" class="0">
