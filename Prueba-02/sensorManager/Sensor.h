@@ -2,15 +2,16 @@ class Sensor{
     private:
         char SEPARATOR = '|';
         byte motorAddress = 0;
-        const byte GET_REAL_TIME = 0x0a, GET_HISTORY = 0X0B, CLEAR_HISTORY = 0X0A;
+        const byte GET_REAL_TIME = 0x0a, GET_HISTORY = 0X0B, CLEAR_HISTORY = 0X0A; // commands to send
         void sendData(byte command, byte len);// send data to sensor
-        void waitResponse();
+        void waitResponse(); // wait for serial response of the sensor
+        // split the sensor response by "|", getting every data
         void splitResponse(String response, byte *data, byte *parameters, byte checkSum, byte parametersSize);
     public:
-        Sensor(byte _motorAddress) : motorAddress(_motorAddress){
-            Serial.begin(9600, SERIAL_8E1);
+        Sensor(byte _motorAddress) : motorAddress(_motorAddress){ // start the object with the motor address
+            Serial.begin(9600, SERIAL_8E1); // baudrate in 9600 and parity even with 1 bit stop
         };
-        byte* getRealTime();
+        byte* getRealTime(); // return an array with the parameters from the sensor
         byte* getHistory();
         byte* clearHistory();
 
@@ -44,7 +45,7 @@ byte* Sensor::clearHistory(){
 }
 
 void Sensor::sendData(byte command, byte len){
-    String data = "";
+    String data = ""; // data to send to the sensor
     data += SEPARATOR;
     data += motorAddress;
     data += SEPARATOR;
@@ -53,7 +54,7 @@ void Sensor::sendData(byte command, byte len){
     data += command;
     data += SEPARATOR;
     byte opp = motorAddress + len + command;
-    byte parameters[len] = {
+    byte parameters[len] = {// parameters from the documentation
         motorAddress,
         0X03,
         command,
