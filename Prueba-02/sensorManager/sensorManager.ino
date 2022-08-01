@@ -1,12 +1,14 @@
 #include <SoftwareSerial.h>
 #include "Sensor.h"
 
+// this library use the serial port, if we want to communicate by Serial port
+// with other device we should use <SoftwareSerial.h>
 Sensor sensor(55); // create the sensor with the motor address
 
 void setup(){
 
-    //every function return an array of parammeters in bytes
-    //if the parameter is longer than  byte it should be converted to int or long
+    //every function return an array of parameters in bytes
+    //if the parameter is longer than byte it should be converted to int or long
     //using the next bytes
     sensor.getRealTime();
     sensor.getHistory();
