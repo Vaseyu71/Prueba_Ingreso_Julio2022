@@ -14,3 +14,12 @@ Para la solucion de cada uno de los problemas el aspirante es libre de escoger e
   Para probar que todo este bien, una vez clonado el repositorio y creada la rama puede realizar un push y corroborar todos sus cambios.
   
 ## Paso. Al finalizar el examen realice de nuevo un push a su rama. Recuerde se calificara solamente el ultimo commit realizado tengalo muy presente.
+
+# Resultado
+## Prueba 01
+Presenta una buena capacidad para interpretar y analizar circuitos,  a espera de archivo PDF con esquematico de los puntos 2 y 3.
+
+## Prueba 02
+- Conocimiento en linux demostrados en aplicaciónes basicas
+- Conocimiento en microcontroladores comerciales ESP32 y ESP8266
+- Buena interpretación y analisis de problemas para solución.
